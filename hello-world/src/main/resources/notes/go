@@ -1,0 +1,4 @@
+1. Currency feature
+2. A channel in Go provides a connection between two goroutines, allowing them to communicate.
+3. It doesn't communicate by sharing memories, share memory by communicating (use a channel to pass data back and forth between goroutines).
+4. Channels are first-class values, just like strings or integers

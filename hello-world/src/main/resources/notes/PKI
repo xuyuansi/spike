@@ -1,0 +1,30 @@
+Public Key Infrastructure
+
+Overview
+========
+1. A two key encryption system for communication
+2. A framework, a set of rules
+3. Provides authentication and confidentiality
+   Authentication: Confirms the owner of the keys using "Digital Certificates" (DC solves the problem of someone pretending to be Alice and sending me the malicious public key.)
+   Confidentiality: Encrypts data transmissions (I send message to Alice who has a public and private key pair. I request the public key and get it. I encrypt the message with the public key. She decrypts the message with the private key.)
+4. It is used all over the web in the form of SSL certificates. Verifying who you are interacting with is important when shopping on line.
+
+=========
+1. Digital Certificates:
+   Helps with authentication
+   Associates a public key with an individual/company
+   Issued by a Certificate Authority
+2. Certificate Authorities (CA)
+   Is a server responsible for zissuing, revoking and distributing certificates
+   Often a trusted third-party organization like VeriSign, but companies or organizations can have an in-house CA
+  ?Stores the public key in a directory that is available to anyone that wants to verify your certificate
+3. Registration Authorities (RA)
+   Acts as a secretory of CA
+
+3. How PKI works
+================
+1. Alice registered and have a digital certificate with CA
+2. I request Alice's certificate from the CA (one of CA's responsibilities is to distribute the certs) [Or Alice could send the certificate by herself. But how do we know it belongs to Alice that is signed by a CA. And we trust the CA]
+3. CA sends Alice's certificate to me. I encrypt my message using Alice's verified public key contained within the certificate
+4. Alice decrypts the message with her private key
+

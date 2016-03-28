@@ -1,0 +1,69 @@
+Kubernetes
+==========
+1. Kubernetes starts and networks containers
+2. Written in Go
+3. Kubernets are 5 mutually-aware Linux binaries, 3 run on designated master and 2 run on each minion or called node
+4. The master controls the nodes
+5. Nodes are where your containers run
+6. A master and notes are called a cluster
+7. Major first class object: Pod and Service, and they are slugs of JSON or YAML
+8. Pod
+   The smallest unit of deployment in Kubernetes
+   Created through its replication controller
+   Consists of one or more containers
+   Containers expose ports on pods
+   Instead of asking "Are my containers running?" we ask "Are my pods running?"
+   ====================
+   ---
+   apiVersion: v1
+   kind: Pod
+   metadata:
+      name: busybox
+      namespace: default
+   spec:
+      containers:       <<<<<< list of containers
+      - image: busybox
+         command:
+         - sleep
+         - "3600"
+         name: busybox
+      restartPolicy: Always
+   ====================
+9. Service
+   A thing with a user-facing DNS name
+   Binds to specific pod:port
+   So you can interact with the bound container by DNS name
+   Systems are wired up as a set of Pods and Services
+   ====================
+   ---
+   kind: "Service"
+   spec:
+      type: "NodePort"
+      ports:
+      -
+         protocol: "TCP"
+         targetPort: 2181   <<<<<<<<< create a binding to this exposed container port
+         port: 2181         <<<<<<<<< users address the service on this port
+         nodePort: 32181
+      selector:
+         name: "sidekicks"  <<<<<<<<< go find pods labeled like this
+   apiVersion: "v1"
+   metadata:
+      name: "zookeeper"
+   ====================
+
+Container
+=========
+1. Is a sand-boxed process launched by a parent root-like process
+2. Has access to its own memory, disk and network
+3. Sees a normal, full-featured Linux environment
+4. A container can be packaged into a file using a recipe
+5. A container is a software defined computer
+
+
+Docker
+======
+1. Docker is a packaging technology
+2. A Docker image is a packaged container spec defined as a recipe in a Dockerfile
+3.
+

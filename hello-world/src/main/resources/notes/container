@@ -1,0 +1,5 @@
+a process that has its view of filesystem, network
+CONTAINER starts by docker runs the entry point command
+Docker only runs on Linux
+> docker save --output=wait.tar waiter
+Docker packaging tech, a runtime
