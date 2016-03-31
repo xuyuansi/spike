@@ -1,4 +1,4 @@
-package spike.xsi.getstarted.amqp;
+package spike.xsi.amqp;
 
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.Queue;
@@ -9,7 +9,7 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
 import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
 
-public class PlainJava {
+public class HelloWorld {
     public static void main(final String... args) throws Exception {
 
         CachingConnectionFactory cf = new CachingConnectionFactory();
